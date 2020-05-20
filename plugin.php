@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: gutenberg-popover — CGB Gutenberg Block Plugin
+ * Plugin Name: Gutenberg Popover
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
  * Description: gutenberg-popover — is a Gutenberg plugin created via create-guten-block.
  * Author: mrahmadawais, maedahbatool
