@@ -20,10 +20,12 @@ const setPopoverContent = (value) => {
     return applyFormat(value, {
       type: 'popover/popover',
       attributes: {
+        tabindex: '0',
         'data-toggle': 'popover',
         'data-placement': 'top',
         'data-content': _value,
-        style: `border-bottom: solid 3px lightblue`,
+        'data-trigger': 'focus',
+        style: `border-bottom: solid 3px lightblue;cursor:pointer`,
       },
     });
   } else {
