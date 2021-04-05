@@ -34,15 +34,15 @@ class Edit extends Component {
       isOpen: false,
   
 			text: '',
-      mediaID: {
-        type: 'number',
-      },
-      mediaURL: {
-          type: 'string',
-          source: 'attribute',
-          selector: 'img',
-          attribute: 'src',
-      },
+      // mediaID: {
+      //   type: 'number',
+      // },
+      // mediaURL: {
+      //     type: 'string',
+      //     source: 'attribute',
+      //     selector: 'img',
+      //     attribute: 'src',
+      // },
     }
   }
   
@@ -55,7 +55,9 @@ class Edit extends Component {
 	}
 
   render() {
-    const { text,mediaURL,mediaID } = this.state;
+    const { text,
+      // mediaURL, mediaID
+    } = this.state;
     
 		const {
 			isActive,
@@ -65,14 +67,14 @@ class Edit extends Component {
 
     const activeColorFormat = getActiveFormat( value, name );
 
-    const onSelectImage = ( media ) => {
-      this.setState( {
-        mediaURL: media.url,
-        mediaID: media.id
-      } )
-    };
+    // const onSelectImage = ( media ) => {
+    //   this.setState( {
+    //     mediaURL: media.url,
+    //     mediaID: media.id
+    //   } )
+    // };
 
-    const _defaultImage = '/wp-content/themes/sched_mvp/img/preview.jpg';
+    // const _defaultImage = '/wp-content/themes/sched_mvp/img/preview.jpg';
     
 		return (
 			<Fragment>
@@ -102,7 +104,7 @@ class Edit extends Component {
                   }
                 />
               </div>
-              <div style={{display:'flex',flexDirection:'column'}}>
+              {/* <div style={{display:'flex',flexDirection:'column'}}>
                 <img style={{width:'40px',height:'40px',margin:'auto'}} src={ activeColorFormat && ! mediaURL ? _defaultImage : mediaURL } />
                 <MediaUploadCheck>
                   <MediaUpload
@@ -114,21 +116,21 @@ class Edit extends Component {
                     ) }
                   />
                 </MediaUploadCheck>
-              </div>
+              </div> */}
             </div>
 
 						<Button isPrimary onClick={ () => {
 							if ( text ) {
                 let $text = text.replace(/\n/g, '<br/>');
-                let $mediaURL = '';
-                if ( mediaID ) {
-                  $mediaURL = mediaURL;
-                  $text = `<p>`+$text+`</p><img src="`+$mediaURL+`" />`
-                }
+                // let $mediaURL = '';
+                // if ( mediaID ) {
+                //   $mediaURL = mediaURL;
+                //   $text = `<p>`+$text+`</p><img src="`+$mediaURL+`" />`
+                // }
 
                 const attributes = {
                   'text':text,
-                  'mediaURL':$mediaURL,
+                  // 'mediaURL':$mediaURL,
                   'data-content':$text,
                   'tabIndex': '0',
                   'data-toggle': 'popover',
@@ -181,7 +183,7 @@ registerFormatType('popover/popover', {
   className: 'pop',
   attributes: {
     text:'text',
-    mediaURL:'mediaURL',
+    // mediaURL:'mediaURL',
     dataContent: 'data-content',
     dataHtml: 'data-html',
     style: 'style'
